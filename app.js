@@ -7,12 +7,14 @@ app.use(express.static('public'));
 app.use(express.static('app'));
 app.use(express.static('node_modules/@dosomething/forge/assets'));
 
-app.use('/api', require('./lib/api'));
+const stathat = require('./lib/stathat');
 
 const templatePath = require('path').resolve(`./template.html`);
 const template = require('fs').readFileSync(templatePath, 'utf8');
 
 app.get('*', function (req, res) {
+  stathat.count('view', 1);
+  
   res.writeHead(200, {'Content-Type': 'text/html'});
   res.write(template);
   res.end();
