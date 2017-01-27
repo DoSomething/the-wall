@@ -1,0 +1,14 @@
+.gallery {
+  text-align: center;
+}
+
+.reportback {
+  display: inline-block;
+  background-color: $white;
+  padding: $base-spacing;
+  margin: 8px;
+
+  img {
+    max-width: 100%;
+  }
+}

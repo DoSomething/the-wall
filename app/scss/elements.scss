@@ -1,0 +1,11 @@
+h1 {
+  color: #FFF;
+  font-weight: 900;
+  font-family: $font-proxima-nova;
+  font-size: 64px;
+
+
+  @media screen and (min-width: 700px) {
+    font-size: 104px;
+  }
+}
