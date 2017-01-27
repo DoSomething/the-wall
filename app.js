@@ -3,8 +3,9 @@ console.addHeaderFunction(() => `[PID:${process.pid}]`);
 
 const express = require('express');
 const app = express();
-app.use(express.static('public'))
-app.use(express.static('app'))
+app.use(express.static('public'));
+app.use(express.static('app'));
+app.use(express.static('node_modules/@dosomething/forge/assets'));
 
 app.use('/api', require('./lib/api'));
 
