@@ -1,39 +1,72 @@
-.gallery {
-  padding-top: $base-spacing;
-  background: $blue;
-  text-align: center;
-}
-
 $card-length: 300px;
-$caption-height: 96px;
+
+.gallery {
+  text-align: center;
+  background: $blue;
+}
 
 .card {
+  width: $card-length;
+  height: $card-length;
   display: inline-block;
-  margin: $base-spacing;
+  margin: $base-spacing 0;
   vertical-align: top;
+  overflow: hidden;
+
+  @media screen and (min-width: $card-length * 2) {
+    margin: $base-spacing;
+  }
+
+  .card__wrapper {
+    padding: $base-spacing / 2;
+
+    @media screen and (max-width: $card-length + $base-spacing) {
+      padding: 4px;
+    }
+
+    &.-overlay {
+      background: rgba(0, 0, 0, 0.5);
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
+      height: 100%;
+    }
+  }
+
+  .card__container {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
 }
 
+$caption-height: 64px;
+
 .reportback {
-  background-color: $white;
-  padding: $base-spacing;
+  background: $white;
+
+  .reportback__photo {
+    padding: 4px;
+    display: block;
+
+    img {
+      width: $card-length - $caption-height - 4;
+      height: $card-length - $caption-height - 4;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
 
   .reportback__caption {
-    max-width: $card-length;
+    height: $caption-height - 4;
     overflow: hidden;
-    height: $caption-height;
 
     p {
-      padding: 24px;
       color: $off-black;
       font-family: $font-handwritten;
       font-weight: $weight-normal;
       font-size: 24px;
     }
-  }
-
-  .reportback__photo img {
-    width: $card-length;
-    height: $card-length;
   }
 }
 
@@ -42,31 +75,21 @@ $caption-height: 96px;
   background-size: cover;
   background-position: center;
 
-  .invite__overlay {
-    background: rgba(0, 0, 0, 0.5);
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
-  }
-
-  .invite__wrapper {
-    padding: $base-spacing;
-    width: $card-length;
-    height: $card-length + $caption-height;
-  }
-
   h1 {
     text-align: left;
-    font-size: 86px;
+    word-spacing: $card-length;
+    font-size: 60px;
+    text-shadow: $text-shadow;
   }
 
   p {
     color: $white;
     font-size: 18px;
-    margin: $base-spacing 0;
-    text-shadow: 1px 1px 4px $off-black;
+    margin: 6px 0;
   }
 
   .button {
-    font-size: 24px;
+    font-size: 20px;
     background: $white;
     color: $yellow;
   }

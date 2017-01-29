@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import 'whatwg-fetch';
 
 const header = "Let's Do This.";
-const subheader = "Join the movement and take action with 5.5 million young people."
+const subheader = "Take action with 5.5 million young people.";//"Join the movement and take action with 5.5 million young people."
 
 class Invite extends Component {
   constructor(props) {
@@ -18,16 +18,16 @@ class Invite extends Component {
     .then(res => res.json())
     .then(res => res.data[0])
     .then(campaign => this.setState({background: campaign.cover_image.default.sizes.landscape.uri}));
-  }//
+  }
 
   render() {
     return (
       <div className="card invite" style={{backgroundImage: `url(${this.state.background})`}}>
-        <div className="invite__overlay">
-          <div className="invite__wrapper">
+        <div className="card__wrapper -overlay">
+          <div className="card__container">
             <h1>{header}</h1>
             <p>{subheader}</p>
-            <a className="button">get started</a>
+            <a className="button" href="https://dosomething.org">get started</a>
           </div>
         </div>
       </div>

@@ -40,9 +40,9 @@ class Gallery extends Component {
 
   render() {
     return (
-      <div className="gallery">
+      <div className="container gallery">
         {this.state.reportbacks.map((rb, index) => {
-          if (index > 0 && index % 25 === 0) return <Invite />
+          if (index > 0 && index % 24 === 0) return <Invite />
           return <Reportback key={index} data={rb} />
         })}
       </div>

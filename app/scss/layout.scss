@@ -22,7 +22,7 @@ html, body {
 }
 
 header {
-  padding: $base-spacing * 4 0;
+  padding-top: $base-spacing * 4;
   text-align: center;
   background: $white;
 
@@ -30,6 +30,7 @@ header {
     color: $blue;
     text-transform: uppercase;
     padding: 0 $base-spacing / 2;
+    text-shadow: $text-shadow;
   }
 
   p {
