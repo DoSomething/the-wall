@@ -14,7 +14,7 @@ class Invite extends Component {
   }
 
   componentDidMount() {
-    fetch('https://www.dosomething.org/api/v1/campaigns?random=true&count=1&staff_pick=true&cache=false')
+    fetch(`https://www.dosomething.org/api/v1/campaigns?random=true&count=1&cache=false&breakcache=${Math.random()}`)
     .then(res => res.json())
     .then(res => res.data[0])
     .then(campaign => this.setState({background: campaign.cover_image.default.sizes.landscape.uri}));
