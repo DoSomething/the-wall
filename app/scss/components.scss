@@ -4,13 +4,70 @@
   text-align: center;
 }
 
-.reportback {
+$card-length: 300px;
+$caption-height: 96px;
+
+.card {
   display: inline-block;
+  margin: $base-spacing;
+  vertical-align: top;
+}
+
+.reportback {
   background-color: $white;
   padding: $base-spacing;
-  margin: 8px;
 
-  img {
-    max-width: 100%;
+  .reportback__caption {
+    max-width: $card-length;
+    overflow: hidden;
+    height: $caption-height;
+
+    p {
+      padding: 24px;
+      color: $off-black;
+      font-family: $font-handwritten;
+      font-weight: $weight-normal;
+      font-size: 24px;
+    }
+  }
+
+  .reportback__photo img {
+    width: $card-length;
+    height: $card-length;
+  }
+}
+
+.invite {
+  background: $off-black;
+  background-size: cover;
+  background-position: center;
+
+  .invite__overlay {
+    background: rgba(0, 0, 0, 0.5);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
+  }
+
+  .invite__wrapper {
+    padding: $base-spacing;
+    width: $card-length;
+    height: $card-length + $caption-height;
+  }
+
+  h1 {
+    text-align: left;
+    font-size: 86px;
+  }
+
+  p {
+    color: $white;
+    font-size: 18px;
+    margin: $base-spacing 0;
+    text-shadow: 1px 1px 4px $off-black;
+  }
+
+  .button {
+    font-size: 24px;
+    background: $white;
+    color: $yellow;
   }
 }

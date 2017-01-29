@@ -1,22 +1,36 @@
 import React, { Component } from 'react';
 
-class Gif extends Component {
+class Reportback extends Component {
   constructor(props) {
     super(props);
   }
 
   render() {
     return (
-      <a href={`https://www.dosomething.org/us/reportback/${this.props.reportbackId}`} target="_blank" className="reportback">
-        <img src={this.props.photo} />
-      </a>
+      <div className="card reportback">
+        <div className="reportback__photo">
+          <a href={`https://www.dosomething.org/us/reportback/${this.props.data.reportback.id}`} target="_blank">
+            <img src={this.props.data.media.uri} />
+          </a>
+        </div>
+        <div className="reportback__caption">
+          <p>{this.props.data.caption}</p>
+        </div>
+      </div>
     );
   }
 }
 
-Gif.defaultProps = {
-  url: '',
-  photo: '',
+Reportback.defaultProps = {
+  data: {
+    caption: '',
+    media: {
+      url: '',
+    },
+    reportback: {
+      id: '',
+    }
+  }
 }
 
-module.exports = Gif;
+module.exports = Reportback;
