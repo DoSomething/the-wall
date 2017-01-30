@@ -7,7 +7,7 @@ import Invite from './Invite';
 import record from '../util/metrics';
 
 function reachedBottom() {
-  const buffer = 120;
+  const buffer = screen.height / 2;
   const currentScroll = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop;
   const pageHeight = document.body.offsetHeight;
   const clientHeight = document.documentElement.clientHeight;
