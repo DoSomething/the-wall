@@ -12,6 +12,7 @@ $card-length: 300px;
   margin: $base-spacing 0;
   vertical-align: top;
   overflow: hidden;
+  box-shadow: $box-shadow;
 
   @media screen and (min-width: $card-length * 2) {
     margin: $base-spacing;
