@@ -4,6 +4,8 @@ import 'whatwg-fetch';
 import Reportback from './Reportback';
 import Invite from './Invite';
 
+import record from '../util/metrics';
+
 function reachedBottom() {
   const buffer = 120;
   const currentScroll = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop;
@@ -28,7 +30,7 @@ class Gallery extends Component {
   }
 
   fetchReportbacks() {
-    fetch(`https://www.dosomething.org/api/v1/reportback-items?campaigns=48&status=promoted&page=${this.state.page}`)
+    fetch(`https://www.dosomething.org/api/v1/reportback-items?campaigns=48&status=approved,promoted&page=${this.state.page}`)
     .then(res => res.json())
     .then(res => res.data)
     .then((reportbacks) => {
@@ -39,12 +41,17 @@ class Gallery extends Component {
         page: this.state.page + 1,
         end,
       });
-    })
+    });
   }
 
   bottomCheck() {
-    if (this.state.end) return;
+    if (this.state.end) {
+      record('reached end', {page: this.state.page});
+      return;
+    }
+
     if (reachedBottom()) {
+      record('reached bottom', {page: this.state.page});
       this.fetchReportbacks();
       setTimeout(this.bottomCheck, 1000);
     } else {
@@ -60,9 +67,10 @@ class Gallery extends Component {
   render() {
     return (
       <div className="container gallery">
+        <Invite reactKey={0} />
         {this.state.reportbacks.map((rb, index) => {
-          if (index > 0 && index % 20 === 0) return <Invite />
-          return <Reportback key={index} data={rb} />
+          if (index > 0 && index % 20 === 0) return <Invite reactKey={index} />
+          return <Reportback key={index} reactKey={index} data={rb} />
         })}
       </div>
     );
