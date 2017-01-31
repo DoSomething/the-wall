@@ -21,7 +21,7 @@ class Home extends Component {
           <div className="wrapper">
             <h1>solidarity</h1>
             <h1>wall</h1>
-            <p>justice, so we’re building a Solidarity Wall, and you can help. Join the young people celebrating their family heritage in support of the refugees and immigrants facing discrimination and those affected by the travel ban.</p>
+            <p>The DoSomething community believes in compassion, diversity, inclusivity, and justice, so we’re building a Solidarity Wall, and you can help. Join the young people celebrating their family heritage in support of the refugees and immigrants facing discrimination and those affected by the travel ban.</p>
             <p><a href="https://www.dosomething.org/us/campaigns/pride-over-prejudice?source=thewall" target="_blank" onClick={this.onClick}>Add your photo</a>  to strengthen the Solidarity Wall.</p>
           </div>
         </header>
