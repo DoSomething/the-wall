@@ -26,10 +26,13 @@ class Gallery extends Component {
       reportbacks: [],
       page: 1,
       end: false,
+      loading: true,
     }
   }
 
   fetchReportbacks() {
+    this.setState({loading: true});
+
     fetch(`https://www.dosomething.org/api/v1/reportback-items?campaigns=48&status=approved,promoted&page=${this.state.page}`)
     .then(res => res.json())
     .then(res => res.data)
@@ -40,6 +43,7 @@ class Gallery extends Component {
         reportbacks: [...this.state.reportbacks, ...reportbacks],
         page: this.state.page + 1,
         end,
+        loading: false,
       });
     });
   }
@@ -71,6 +75,7 @@ class Gallery extends Component {
           if (index > 0 && index % 20 === 0) return <Invite reactKey={index} />
           return <Reportback key={index} reactKey={index} data={rb} />
         })}
+        {this.state.loading ? <div className="loader">Loading...</div> : null}
       </div>
     );
   }
