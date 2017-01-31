@@ -3,7 +3,7 @@ import 'whatwg-fetch';
 
 import record from '../util/metrics';
 
-const url = "https://www.dosomething.org/us/campaigns/new-year-new-us-wednesday?source=thewall";
+const url = "https://www.dosomething.org/us/campaigns/pride-over-prejudice?source=thewall";
 
 class Invite extends Component {
   constructor(props) {
