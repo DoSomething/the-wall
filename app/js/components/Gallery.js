@@ -67,7 +67,6 @@ class Gallery extends Component {
   render() {
     return (
       <div className="container gallery">
-        <Invite reactKey={0} />
         {this.state.reportbacks.map((rb, index) => {
           if (index > 0 && index % 20 === 0) return <Invite reactKey={index} />
           return <Reportback key={index} reactKey={index} data={rb} />

@@ -27,7 +27,7 @@ $card-length: 300px;
 
     &.-overlay {
       background: rgba(0, 0, 0, 0.5);
-      background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.2));
       height: 100%;
     }
   }
@@ -80,12 +80,15 @@ $caption-height: 64px;
     text-align: left;
     word-spacing: $card-length;
     font-size: 60px;
-    text-shadow: $text-shadow;
+    text-shadow: 2px 2px 9px rgba(0, 0, 0, 0.6);
+    text-transform: uppercase;
+    padding-left: 2px;
+    margin-top: -2px;
   }
 
   p {
     color: $white;
-    font-size: 18px;
+    font-size: 20px;
     margin: 6px 0;
   }
 
