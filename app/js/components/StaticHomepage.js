@@ -1,15 +1,9 @@
 import React, { Component } from 'react';
-import Homepage from './Homepage';
+import StaticGallery from './StaticGallery';
 
 class StaticHomepage extends Component {
-  constructor(props) {
-    super(props);
-
-    setTimeout(() => location.reload(), 30 * 1000); // Reload the page every 30 seconds
-  }
-
   render() {
-    return (<Homepage />);
+    return (<StaticGallery />);
   }
 }
 
