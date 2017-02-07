@@ -13,7 +13,7 @@ class StaticGallery extends Component {
     this.fetchReportbacks = this.fetchReportbacks.bind(this);
     this.fetchReportbacks();
 
-    setInterval(() => this.fetchReportbacks(), 5 * 1000); // Reload reportbacks every 30 seconds
+    setInterval(() => this.fetchReportbacks(), 30 * 1000); // Reload reportbacks every 30 seconds
   }
 
   fetchReportbacks() {
