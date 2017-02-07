@@ -31,6 +31,7 @@ class StaticGallery extends Component {
   render() {
     return (
       <div className="container gallery">
+        <h1>SOLIDARITY WALL</h1>
         {this.state.reportbacks.map((rb, index) => <Reportback key={index} reactKey={index} data={rb} />)}
       </div>
     );
