@@ -13,12 +13,11 @@ class StaticGallery extends Component {
     this.fetchReportbacks = this.fetchReportbacks.bind(this);
     this.fetchReportbacks();
 
-    setInterval(() => this.fetchReportbacks(), 30 * 1000); // Reload reportbacks every 30 seconds
+    setInterval(() => this.fetchReportbacks(), 5 * 1000); // Reload reportbacks every 30 seconds
   }
 
   fetchReportbacks() {
-    console.log('fetch')
-    fetch(`https://www.dosomething.org/api/v1/reportback-items?campaigns=48&status=approved,promoted&random=true`)
+    fetch(`https://www.dosomething.org/api/v1/reportback-items?campaigns=48&status=approved,promoted&random=true&cache=false&defeat=${Math.random()}`)
     .then(res => res.json())
     .then(res => res.data)
     .then((reportbacks) => {
