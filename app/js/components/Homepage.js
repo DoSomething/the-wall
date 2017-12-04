@@ -4,7 +4,7 @@ import Gallery from './Gallery';
 import record from '../util/metrics';
 
 const copy = `
-On November 4, 2017, the Supreme Court voted to allow President Trump's travel ban to go into full effect.
+On December 4, 2017, the Supreme Court voted to allow President Trump's travel ban to go into full effect.
 The ban applies to travelers from Chad, Iran, Libya, Somalia, Syria and Yemen. This decision is just another indicator of anti-immigrant and xenophobic sentiment, as hate crimes and hate speech towards Muslims and immigrants has spiked since 2015. Let’s stand in solidarity with refugees and immigrants around the world, and those in our family, friend, and community networks.
 `;
 
