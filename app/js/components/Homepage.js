@@ -3,6 +3,11 @@ import Gallery from './Gallery';
 
 import record from '../util/metrics';
 
+const copy = `
+On November 4, 2017, the Supreme Court voted to allow President Trump's travel ban to go into full effect.
+The ban applies to travelers from Chad, Iran, Libya, Somalia, Syria and Yemen. This decision is just another indicator of anti-immigrant and xenophobic sentiment, as hate crimes and hate speech towards Muslims and immigrants has spiked since 2015. Let’s stand in solidarity with refugees and immigrants around the world, and those in our family, friend, and community networks.
+`;
+
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -21,7 +26,7 @@ class Home extends Component {
           <div className="wrapper">
             <h1>solidarity</h1>
             <h1>wall</h1>
-            <p>The DoSomething community believes in compassion, diversity, inclusivity, and justice, so we’re building a Solidarity Wall, and you can help. Join the young people celebrating their family heritage in support of refugees and immigrants affected by the White House’s travel ban, and those facing increased discrimination around the world.</p>
+            <p>{copy}</p>
             <p><a href="https://www.dosomething.org/us/campaigns/pride-over-prejudice?source=thewall" target="_blank" onClick={this.onClick}>Add your photo</a>  to strengthen the Solidarity Wall.</p>
           </div>
         </header>

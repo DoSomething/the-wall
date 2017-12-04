@@ -14,7 +14,7 @@ const template = require('fs').readFileSync(templatePath, 'utf8');
 
 app.get('*', function (req, res) {
   stathat.count('view', 1);
-  
+
   res.writeHead(200, {'Content-Type': 'text/html'});
   res.write(template);
   res.end();
